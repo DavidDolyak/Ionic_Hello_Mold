@@ -1,0 +1,6 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+}
+ion-item {
+  --background: var(--ion-color-secondary);
+}
