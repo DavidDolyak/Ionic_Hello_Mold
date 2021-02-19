@@ -1,8 +1,8 @@
 <template>
   <ion-content>
     <ion-img :src="memoryData.image" :alt-text="memoryData.title" />
-    <h1>{{ memoryData.title }}</h1>
-    <h2>{{ memoryData.description }}</h2>
+    <h1 class="ion-text-center">{{ memoryData.title }}</h1>
+    <p class="ion-text-center">{{ memoryData.description }}</p>
   </ion-content>
 </template>
 
