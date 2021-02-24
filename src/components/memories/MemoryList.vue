@@ -13,10 +13,15 @@
 import { IonList } from "@ionic/vue";
 import MemoryListItem from "../memories/MemoryListItem.vue";
 export default {
-  props: ["memories", "isDelButtonClicked"],
+  props: ["isDelButtonClicked"],
   components: {
     IonList,
     MemoryListItem,
+  },
+  computed: {
+    memories() {
+      return this.$store.getters.memories;
+    },
   },
 };
 </script>

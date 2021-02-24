@@ -47,6 +47,32 @@ const store = createStore({
       ],
     };
   },
+  mutations: {
+    addMemory(state, memoryData) {
+      const newMemory = {
+        id: "m" + (state.memories.length + 1),
+        title: memoryData.title,
+        description: memoryData.description,
+        image: memoryData.image,
+        isChecked: false,
+      };
+      state.memories.push(newMemory);
+    },
+    deleteCheckedMemory(state) {
+      const newList = state.memories.filter((i) => {
+        return i.isChecked == false;
+      });
+      state.memories = newList;
+    },
+  },
+  actions: {
+    addMemory(context, memoryData) {
+      context.commit("addMemory", memoryData);
+    },
+    deleteCheckedMemory(context) {
+      context.commit("deleteCheckedMemory");
+    },
+  },
   getters: {
     memories(state) {
       return state.memories;

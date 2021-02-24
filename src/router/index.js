@@ -18,6 +18,7 @@ const routes = [
   {
     path: "/memories/add",
     component: AddMemoryPage,
+    name: "AddMemoryPage",
   },
 ];
 

@@ -22,9 +22,6 @@ import {
 export default {
   el: "MemoryListItem",
   props: ["memory", "isDelButtonClicked"],
-  data() {
-    return {};
-  },
   components: {
     IonItem,
     IonThumbnail,

@@ -16,7 +16,9 @@ import { add } from "ionicons/icons";
 export default {
   components: { IonButton, IonIcon },
   data() {
-    return { add };
+    return {
+      add,
+    };
   },
 };
 </script>

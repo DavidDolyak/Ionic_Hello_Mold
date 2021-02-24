@@ -1,29 +1,21 @@
 <template>
   <base-layout pageTitle="Add your memory">
-    <ion-content class="ion-padding-horizontal">
-      <ion-input
-        placeholder="Please add img url of the memory cover"
-        pattern="url"
-        type="url"
-        >Image link</ion-input
-      >
-      <ion-input placeholder="Name your memory">Title</ion-input>
-      <ion-input placeholder="Tell other's a little bit about it"
-        >Description</ion-input
-      >
-    </ion-content>
-    <regular-button button-title="ADD"></regular-button>
+    <add-memory-form @save-memory="saveMemory" />
   </base-layout>
 </template>
 
 <script>
-import { IonContent, IonInput } from "@ionic/vue";
-import RegularButton from "../components/buttons/RegularButton.vue";
+import AddMemoryForm from "../components/memories/AddMemoryForm.vue";
 export default {
+  name: "AddMemoryPage",
   components: {
-    IonInput,
-    IonContent,
-    RegularButton,
+    AddMemoryForm,
+  },
+  methods: {
+    saveMemory(memoryData) {
+      this.$store.dispatch("addMemory", memoryData);
+      this.$router.replace("/memories");
+    },
   },
 };
 </script>
